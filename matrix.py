@@ -1,23 +1,21 @@
 A = []
 inp = input()
-while inp != 'end':
-    A.append([int(i) for i in inp.split()])
+intermediate = []
+result = []
+count = 0
+while inp != 'end':# Ввод матрицы
+    row = [int(i) for i in inp.split()]
+    A.append(row)
     inp = input()
-for i in range(n):
-    for j in range(m):
-#                 for dj in range(-1, 2):
-#                     ai = i + di
-#                     aj = j + dj
-#                     # (ai, aj)
-#                     if 0 <= ai < n and 0 <= aj < m and a[ai][aj] == -1:
-#                         a[i][j] += 1
-# вывод результата
-# for i in range(n):
-#     for j in range(m):
-#         if a[i][j] == -1:
-#             print('*', end='')
-#         elif a[i][j] == 0:
-#             print('.', end='')
-#         else:
-#             print(a[i][j], end='')
-#     print()
+for i in range(0, len(A)):# len(A) это кол-во столбцов
+    for j in range(0, len(row)):
+        intermediate.append(A[i - 1][j] + A[i - len(A) + 1][j] + A[i][j - 1] + (A[i][j - len(row) + 1]))
+        count += 1
+        if count == len(row):
+            result.append(intermediate)
+            count = 0
+            intermediate = []
+for i in range(0, len(A)):
+    for j in range(0, len(row)):
+        print(result[i][j], end=' ')
+    print()
