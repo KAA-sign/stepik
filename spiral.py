@@ -1,14 +1,16 @@
 n = int(input())
-intermediate = []
-result = []
-count = 0
-A  = [[0 for j in range(n)] for i in range(n)]]
+count = 1
+A = [[0 for j in range(n)] for i in range(n)]
 for i in range(n):
     for j in range(n):
         if i == 0:
-            for dj in range(n):
-
-
+            A[i][j] = j + 1
+            count = A[i][j]
+        elif j == n - 1:
+            count += 1
+            A[i][j] += j + count
+count = 0
+print(A)
 
 
 # n, m, k = (int(i) for i in input().split())  # чтение размеров поля и числа мин
