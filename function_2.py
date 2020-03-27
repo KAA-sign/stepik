@@ -1,7 +1,10 @@
-def modify_list(lst):
-    for i in lst:
-        while  i % 2 != 0:
-            new_list = []
-            new_list.append(i // 2)
-    print(new_list)
 
+
+def modify_list(lst):
+    new_list = []
+    for i in lst:
+        if  i % 2 != 0: 
+            lst.remove(i) 
+            lst.append(i // 2)
+
+    modify_list([1, 2, 3, 4, 5, 6])
