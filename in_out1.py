@@ -1,8 +1,7 @@
-# with open ('in.txt') as file_in, open("out.txt", 'w') as file_out:
-#     for line in file_in:
-
-s = ('abc a bCd bC AbC BC BCD bcd ABC').lower()
-lst_s = [word for word in s.split()]
+text = open("in.txt", 'r')
+lst_s = text.read().replace('\n', ' ').lower().split()
+text.close()
+# lst_s = [word for word in s.lower().split()]
 set_s = {word for word in lst_s}
 cnt_word = {}
 for set_word in set_s:
@@ -11,4 +10,6 @@ for set_word in set_s:
         if set_word == word:
             cnt += 1
     cnt_word[set_word] = cnt
-print(max(cnt_word, key=cnt_word.get), velue)
+v=list(cnt_word.values())
+k=list(cnt_word.keys())
+print(k[v.index(max(v))], max(v))
