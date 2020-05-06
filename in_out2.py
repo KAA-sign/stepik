@@ -11,5 +11,3 @@ with open('/home/anthony/projects/stepik/in.txt') as f:
         count += 1
         print(result)
     print((first_sum / count), (second_sum / count), (third_sum / count))
-
-
