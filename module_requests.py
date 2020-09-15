@@ -1,7 +1,8 @@
+
+
 import requests
 
 response = requests.get('https://stepic.org/media/attachments/course67/3.6.2/662.txt')
-
 
 data = response.text
 
