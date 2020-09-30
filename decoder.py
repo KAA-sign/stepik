@@ -26,9 +26,34 @@ dacabac
 
 '''
 
+# original_alphabet = list(input('Enter original alphadet: '))
+original_alphabet = list('abcd')
+# finite_alphabet = list(input('Enter finite alphabet: '))
+finite_alphabet = list('*d%#')
+# not_encrypted = list(input('Enter not_encrypted string: '))
+not_encrypted = list('abacabadaba')
+# not_encrypted = list(input('Enter encrypted string: '))
+encrypted = list('#*%*d*%')
 
-original_alphabet = input('Enter original alphadet: ').split()
+def encoder_decoder(original_alphabet, finite_alphabet):
+    decoding_mask = dict(zip(original_alphabet, finite_alphabet))
+    return decoding_mask
 
-finite_alphabet = input('Enter finite alphabet: ').split()
+def encoding(decoding_mask, not_encrypted):
+    for i in not_encrypted:
+        if i in decoding_mask.keys():
+            print(decoding_mask.keys()[i], end='')
 
-print(original_alphabet, finite_alphabet)
+
+    
+
+decoding_mask = encoder_decoder(original_alphabet, finite_alphabet)
+encoding(decoding_mask, not_encrypted)
+ 
+ 
+ 
+ 
+ 
+ 
+
+
