@@ -1,4 +1,3 @@
-
 def turtle_coordinates(move = {}, step = 0):
     d = int(input())
     coordinates = {}
