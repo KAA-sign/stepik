@@ -44,5 +44,5 @@ def print_tog(dict_tog):
     
 
        
-table_off_games()
-print_tog(table_off_games)
+tog = table_off_games()
+print_tog(tog)
