@@ -13,27 +13,24 @@ def height_table(tsv_file_in):
 
 def medium_height_table(ht):
     mht = {}
-    for cllass in range(1,12):
-        for key, value in ht.items():
-            if str(cllass) != key:
-                mht[cllass] = '-'
-            else:
-                count, summ = 0, 0
+    cllass = 1
+    for key, value in ht.items():
+        for cllass in range(12):
+            if cllass == key:
                 for v in value:
+                    count, summ = 0, 0
                     summ += int(v)
                     count += 1
-                mht[cllass] = summ / count
+                    mht[key] = summ / count
+            else:
+                mht[cllass] = '-'
             cllass += 1
+        
+    cllass += 1 
     print(mht)
     return mht
                     
                     
-                
-            
-
-            
-            
-
     #     ht = {classs: {key:value for key, value in parameters.items()} for team in teams}
     #     lst.append(line.strip().split(';'))
     #     result = (int(first) + int(second) + int(third)) / 3

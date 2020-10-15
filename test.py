@@ -1,22 +1,37 @@
-
-table_off_games = {'Спартак': {'number_of_games': 2, 'victory': 0, 'drawn': 0, 'defeat': 2,     'game_points': 0},
-                    'Зенит': {'number_of_games': 2, 'victory': 1, 'drawn': 0, 'defeat': 1, 'game_points': 3}, 
-                    'Локомотив': {'number_of_games': 1, 'victory': 1, 'drawn': 0, 'defeat': 0, 'game_points': 3}}
-
-# def print_tog(dict_tog):
-#     for key in table_off_games.keys():
-#         print(key)
-#         for 
-    # for t in table_off_games[key][1:]:
-    #     print("{:<4} {}".format(t['nomer'], t['name']))
-        # for items in table_off_games[key]:
-        #     print(items, end='')
-        #     for values in table_off_games[key]:
-        #         print(values, end='')
-def print_tog(dict_tog, indent =0):
-    for key, value in dict_tog.items():
-        print(key, ':', end=' ')
-        for key, value in value.items():
-            print(value, end=' ')
-        print()
-print_tog(table_off_games)
+import random
+while True:
+    words = {
+    'На свете есть много лягушек: все они очень разные. \
+    Свои названия они получили за свою внешность: живёт в \
+    траве - травяная, с острой мордой - остромордая, живёт в пруду - прудовая.\
+    А эта африканская лягушка получила своё название за необычный рот.\
+    Как зовут эту лягушку?':'узкорот',
+    ' Эта птица может ходить по дну водоёма, похожа на воробья. Её так и прозвали\
+    «водяной воробей». Что это за птица?':'оляпка',
+    'На морском дне растёт очень опасная водоросль: актиния – она больно жжётся. \
+    А эта рыбка дружит с ней. И наряд у этой рыбки яркий, весёлый, пёстрый. \
+    Что это за рыбка?':'клоун'
+    }
+    question, word = random.choice(list(words.items()))
+    print('Задание: ', question)
+    skr=len(word)*'*'
+    print(skr)
+    while '*' in skr:
+        letter_or_word=input('Введите букву или слово: ')
+        if letter_or_word!=word:
+            letter=""
+            for index in range(len(word)):
+                if letter_or_word==word[index]:
+                    letter+=letter_or_word
+                elif letter_or_word!=word[index]:
+                    letter+=skr[index]
+            skr=letter
+            print(skr)
+        elif letter_or_word==word:
+            print('Вы угадали слово:')
+            break
+    exit=str(input('Хотите ли вы продолжить игру? Y/N:'))
+    if exit=='Y': 
+        True
+    elif exit=='N':
+        break
