@@ -14,19 +14,18 @@ def height_table(tsv_file_in):
 def medium_height_table(ht):
     mht = {}
     cllass = 1
-    for key, value in ht.items():
-        for cllass in range(12):
-            if cllass == key:
+    for cllass in range(1, 12):
+        for key, value in ht.items():
+            if str(cllass) not in ht.keys():
+                mht[cllass] = '-'
+            if str(cllass) == key or str(cllass) != key:
+                count, summ = 0, 0
                 for v in value:
-                    count, summ = 0, 0
                     summ += int(v)
                     count += 1
-                    mht[key] = summ / count
-            else:
-                mht[cllass] = '-'
-            cllass += 1
-        
-    cllass += 1 
+                mht[key] = summ / count
+            
+            cllass += 1 
     print(mht)
     return mht
                     
