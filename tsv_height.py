@@ -14,7 +14,8 @@ def height_table(tsv_file_in):
 def medium_height_table(ht):
     mht = {}
     cllass = 1
-    for cllass in range(1, 12):
+    
+    
         for key, value in ht.items():
             if str(cllass) not in ht.keys():
                 mht[cllass] = '-'
