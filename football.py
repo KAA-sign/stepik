@@ -1,6 +1,8 @@
 def table_off_games(table_off_games = {}):
     parameters = {'number_of_games': 0, 'victory': 0, 'drawn': 0 , 'defeat': 0, 'game_points': 0}
-    teams, keys_tog, table_off_games_interim = [], [], {}
+    teams = []
+    keys_tog = []
+    table_off_games_interim = {}
     i = 0
     quantity = int(input('Еnter the number of games: '))
     while i < quantity:
@@ -38,6 +40,9 @@ def print_tog(dict_tog):
         for key, value in value.items():
             print(value, end=' ')
         print()
+
     
+
+       
 tog = table_off_games()
 print_tog(tog)
