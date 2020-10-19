@@ -12,23 +12,26 @@ def height_table(tsv_file_in):
     return ht
 
 def medium_height_table(ht):
-    mht = {}
-    cllass = 1
-    
-    
-        for key, value in ht.items():
-            if str(cllass) not in ht.keys():
-                mht[cllass] = '-'
-            if str(cllass) == key or str(cllass) != key:
-                count, summ = 0, 0
-                for v in value:
-                    summ += int(v)
-                    count += 1
-                mht[key] = summ / count
-            
-            cllass += 1 
+    mht = {}        
+    for key, value in ht.items():
+        count, summ = 0, 0
+        for v in value:
+            summ += int(v)
+            count += 1
+        mht[key] = summ / count
     print(mht)
     return mht
+
+def print_mht(mht):
+    for classs in range(1,12):
+        if str(classs) not in mht.keys():
+            mht.setdefault(classs, '-')
+    list_keys = list(map(int, mht.keys()))
+    list_keys.sort()
+    for i in list_keys:
+        print(i, mht[str(i)])
+            
+    
                     
                     
     #     ht = {classs: {key:value for key, value in parameters.items()} for team in teams}
@@ -42,4 +45,5 @@ def medium_height_table(ht):
     # print((first_sum / count), (second_sum / count), (third_sum / count))
     
 ht = height_table('/home/anthony/projects/stepik/dataset_3380_5.txt')
-mht = medium_height_table(ht)   
+mht = medium_height_table(ht)
+print_mht(mht)
