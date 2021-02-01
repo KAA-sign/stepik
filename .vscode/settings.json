@@ -1,5 +1,7 @@
 {
     "pythonPreview.typeLabel.fontFamily": "'Cascadia Code PL'",
     "editor.fontFamily": "'Cascadia Code PL'",
-    "terminal.integrated.fontFamily": "'Cascadia Code PL'"
+    "terminal.integrated.fontFamily": "'Cascadia Code PL'",
+    "AREPL.pythonPath": "/usr/bin/python3",
+    "python.pythonPath": "/home/anthony/venv/default/bin/python"
 }
