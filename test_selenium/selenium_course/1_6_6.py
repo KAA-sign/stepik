@@ -6,17 +6,6 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    # input1 = browser.find_element_by_css_selector('div.first_block/div[1]/  input.first]')
-    # input1.send_keys("Ivan")
-    # input2 = browser.find_element_by_css_selector('.first_block:nth-child(2) > div > input')
-    # input2.send_keys("Petrov")
-    # input3 = browser.find_element_by_css_selector('div.first_block:nth-child(3) > div > input')
-    # input3.send_keys("q@q.ru")
-    # input4 = browser.find_element_by_class_name('city')
-    # input4.send_keys("Smolensk")
-    # input5 = browser.find_element_by_class_name('city')
-    # input5.send_keys("Russia")
-
     required_fields = 3
     elements = browser.find_elements_by_tag_name('input')
     for element in elements:
