@@ -3,5 +3,11 @@
     "editor.fontFamily": "'Cascadia Code PL'",
     "terminal.integrated.fontFamily": "'Cascadia Code PL'",
     "AREPL.pythonPath": "/usr/bin/python3",
-    "python.pythonPath": "/home/anthony/venv/default/bin/python"
+    "python.pythonPath": "/home/anthony/venv/default/bin/python",
+    "python.testing.pytestArgs": [
+        "test_selenium"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "terminal.explorerKind": "external"
 }
